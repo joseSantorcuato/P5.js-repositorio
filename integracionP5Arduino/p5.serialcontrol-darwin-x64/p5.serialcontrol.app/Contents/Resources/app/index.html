@@ -1,0 +1,47 @@
+<html>
+	<head>
+	  <meta charset="UTF-8">
+	  <script language="javascript" type="text/javascript" src="libs/p5.js"></script>
+  	  <script language="javascript" type="text/javascript" src="libs/p5.dom.js"></script>
+	  <script language="javascript" type="text/javascript" src="libs/p5.serialport.js"></script>
+	  <script language="javascript" type="text/javascript" src="client/sketch.js"></script>
+	  <script language="javascript" type="text/javascript" src="client/script.js"></script>
+	  <link rel="stylesheet" type="text/css" href="client/css/style.css">
+	</head>
+	<body>
+		<div>
+			<h1>p5 Serial Control</h1>
+			<p>A GUI application for running and monitoring of the p5.serialserver.</p>
+			<p>This application runs the p5.serialserver which enables connectivity between a local serial device and a web application via the p5.serialport p5.js library.</p> 
+			<p>It is recommended that you select, open, and close serial ports via your p5 sketch rather than this application but the methods for doing so for simple debugging are available here as well.  Please note that if you "Open" or "Close" here it will also effect your sketch (opening/closing here will also open/close it for your sketch).</p>
+		</div>
+		<div>
+			<b>IP</b>
+			<div id="serialIp"></div>
+		</div>
+		<div id="availablePorts">
+			<b>Available Ports</b>
+			<div id="serialports">
+				No Ports Found
+			</div>
+			<input type="button" id="rescan" value="List Ports">
+		</div>
+		<div id="portselectdiv">
+			<b>Select Serial Port:</b>
+		</div>
+		<div id="controls">
+			<input type="button" id="connect" value="Open">
+			<input type="button" id="disconnect" value="Close">
+		</div>
+		<div>
+			<b>Serial Console:</b> <br />
+			<b>Enabled:</b> <input id="serialconsoleenabled" type="checkbox" value="true" checked=""><br />
+			<input type="button" id="clear" value="Clear">
+			<textarea id="serialconsole" cols=80 rows=20></textarea><br />
+		</div>
+		<div id="sendserial">
+			Send (ASCII):
+			<input type="text" id="message" size=80><input type="button" id="send" value="Send">
+		</div>
+	</body>
+</html>
